@@ -15,9 +15,9 @@ export const QRModal: React.FC<QRModalProps> = ({ isOpen, onClose }) => {
 
   const downloadUrl =
     activeTab === 'apk'
-      ? `${window.location.origin}/cartit-release.apk`
+      ? 'https://github.com/dineshnaikg2003/cartit-website/releases/download/v1.0.0/cartit-release.apk'
       : activeTab === 'android'
-      ? `${window.location.origin}/cartit-release.apk`
+      ? 'https://github.com/dineshnaikg2003/cartit-website/releases/download/v1.0.0/cartit-release.apk'
       : 'https://cartit.app/#ios-coming-soon';
 
   const handleCopy = () => {
