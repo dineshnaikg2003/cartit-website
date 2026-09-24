@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X, Smartphone, Copy, Check, QrCode, ArrowUpRight } from 'lucide-react';
+import { QRCodeSVG } from 'qrcode.react';
 
 interface QRModalProps {
   isOpen: boolean;
@@ -84,58 +85,32 @@ export const QRModal: React.FC<QRModalProps> = ({ isOpen, onClose }) => {
           </button>
         </div>
 
-        {/* QR Code Container */}
-        <div className="p-6 bg-white rounded-2xl flex flex-col items-center justify-center space-y-3 shadow-inner">
-          {/* Detailed SVG QR Code Graphic with Center App Logo */}
-          <div className="w-48 h-48 bg-[#0A0F0D] p-2.5 rounded-xl flex items-center justify-center relative">
-            <svg
-              className="w-full h-full text-white fill-current"
-              viewBox="0 0 100 100"
-              shapeRendering="crispEdges"
-            >
-              {/* Outer boundary markers */}
-              <rect x="5" y="5" width="28" height="28" fill="#00B259" rx="4" />
-              <rect x="9" y="9" width="20" height="20" fill="#0A0F0D" rx="2" />
-              <rect x="13" y="13" width="12" height="12" fill="#00B259" rx="1" />
-
-              <rect x="67" y="5" width="28" height="28" fill="#00B259" rx="4" />
-              <rect x="71" y="9" width="20" height="20" fill="#0A0F0D" rx="2" />
-              <rect x="75" y="13" width="12" height="12" fill="#00B259" rx="1" />
-
-              <rect x="5" y="67" width="28" height="28" fill="#00B259" rx="4" />
-              <rect x="9" y="71" width="20" height="20" fill="#0A0F0D" rx="2" />
-              <rect x="13" y="75" width="12" height="12" fill="#00B259" rx="1" />
-
-              {/* Data pixel matrix blocks */}
-              <rect x="38" y="10" width="6" height="6" fill="#ffffff" />
-              <rect x="48" y="10" width="6" height="12" fill="#ffffff" />
-              <rect x="38" y="22" width="6" height="6" fill="#ffffff" />
-              <rect x="58" y="16" width="6" height="6" fill="#ffffff" />
-
-              <rect x="10" y="38" width="6" height="6" fill="#ffffff" />
-              <rect x="20" y="38" width="10" height="6" fill="#ffffff" />
-              <rect x="36" y="38" width="6" height="18" fill="#00B259" />
-              <rect x="48" y="36" width="12" height="6" fill="#ffffff" />
-              <rect x="66" y="38" width="6" height="6" fill="#ffffff" />
-              <rect x="78" y="38" width="12" height="6" fill="#ffffff" />
-
-              <rect x="46" y="48" width="8" height="8" fill="#00B259" />
-              <rect x="58" y="48" width="14" height="6" fill="#ffffff" />
-              <rect x="78" y="48" width="6" height="12" fill="#ffffff" />
-
-              <rect x="38" y="66" width="12" height="6" fill="#ffffff" />
-              <rect x="54" y="62" width="6" height="10" fill="#ffffff" />
-              <rect x="66" y="66" width="6" height="18" fill="#00B259" />
-              <rect x="78" y="66" width="12" height="6" fill="#ffffff" />
-            </svg>
-
-            {/* Center App Logo Overlay */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-xl bg-white p-0.5 shadow-lg flex items-center justify-center">
-              <img src="/app_logo.png" alt="CartIT Logo" className="w-full h-full rounded-lg object-cover" />
-            </div>
+        {/* Dynamic 100% Scannable QR Code Container */}
+        <div className="p-5 bg-white rounded-2xl flex flex-col items-center justify-center space-y-3 shadow-inner">
+          <div className="p-3 bg-white rounded-xl shadow-md border border-neutral-200 flex items-center justify-center">
+            <QRCodeSVG
+              value={downloadUrl}
+              size={180}
+              level="H"
+              marginSize={1}
+              fgColor="#0A0F0D"
+              bgColor="#FFFFFF"
+              imageSettings={{
+                src: "/app_logo.png",
+                x: undefined,
+                y: undefined,
+                height: 36,
+                width: 36,
+                excavate: true,
+              }}
+            />
           </div>
-          <span className="text-[11px] font-medium text-neutral-600 font-mono">
-            {activeTab === 'ios' ? 'CartIT iOS App Link' : activeTab === 'android' ? 'CartIT Google Play Link' : 'CartIT Release APK (54.6 MB)'}
+          <span className="text-[11px] font-bold text-neutral-800 font-mono text-center">
+            {activeTab === 'apk'
+              ? 'CartIT Customer Android Release APK (54.6 MB)'
+              : activeTab === 'android'
+              ? 'CartIT Google Play Direct Download'
+              : 'iOS App Store — Coming Soon 🚀'}
           </span>
         </div>
 
