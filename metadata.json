@@ -1,0 +1,6 @@
+{
+  "name": "CartIT - Smart Shopping & Retail Companion",
+  "description": "Official business website for CartIT: scan-and-go mobile retail shopping app with download links and 24/7 customer support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

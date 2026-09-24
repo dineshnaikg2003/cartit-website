@@ -1,0 +1,240 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #0A0F0D;
+    color: #FFFFFF;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0F0D;
+}
+::-webkit-scrollbar-thumb {
+  background: #1F382B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00B259;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes laserSweep {
+  0% {
+    top: 5%;
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 92%;
+    opacity: 0.2;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 4.5s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 5s ease-in-out infinite;
+}
+
+.animate-laser {
+  animation: laserSweep 2s ease-in-out infinite alternate;
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Glass & Card shine utilities matching AppColors.darkSurface (#141F1A) & darkCardBorder (#1F382B) */
+.card-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-shine::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 20%,
+    rgba(0, 178, 89, 0.05) 25%,
+    transparent 30%
+  );
+  transform: rotate(25deg);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+
+.card-shine:hover::after {
+  transform: rotate(25deg) translate(20%, 20%);
+}
+
+/* CartIT Customer App Design Tokens */
+:root {
+  --cartit-primary: #00B259;
+  --cartit-primary-dark: #008040;
+  --cartit-primary-light: #E6F7EF;
+  --cartit-secondary: #FF9800;
+  --cartit-bg: #0A0F0D;
+  --cartit-surface: #141F1A;
+  --cartit-header-bg: #0F261B;
+  --cartit-border: #1F382B;
+  --cartit-title: #FFFFFF;
+  --cartit-subtitle: #9EBAAA;
+  --cartit-glow: rgba(0, 178, 89, 0.16);
+}
+
+html { background: var(--cartit-bg); }
+body {
+  background:
+    radial-gradient(circle at 78% 8%, rgba(0, 178, 89, 0.14), transparent 30rem),
+    radial-gradient(circle at 12% 28%, rgba(15, 38, 27, 0.4), transparent 28rem),
+    radial-gradient(circle at 50% 85%, rgba(255, 152, 0, 0.05), transparent 35rem),
+    var(--cartit-bg);
+}
+
+::selection { background: rgba(0, 178, 89, 0.35); color: #ffffff; }
+
+button, a, input, select { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid var(--cartit-primary);
+  outline-offset: 3px;
+}
+
+/* Make existing sections feel like one coherent product */
+main > section, main > div > section {
+  position: relative;
+}
+
+main > section:not(:first-child), main > div > section {
+  border-color: var(--cartit-border) !important;
+}
+
+/* Premium surfaces matching AppColors.darkSurface */
+.bg-neutral-900\/40, .bg-neutral-900\/60, .bg-neutral-900\/80,
+.bg-neutral-900\/90, .bg-neutral-950\/80, .bg-neutral-950\/95 {
+  background-color: rgba(20, 31, 26, 0.88) !important;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* Hero polish */
+.hero-glow { filter: blur(70px); }
+
+/* Better cards matching Customer App dark Card Border */
+.card-shine {
+  border-color: var(--cartit-border);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 178, 89, 0.05);
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.card-shine:hover {
+  border-color: rgba(0, 178, 89, 0.4);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.5), 0 0 30px rgba(0, 178, 89, 0.15);
+}
+
+/* Interactive controls */
+button {
+  transition-property: transform, background-color, border-color, color, box-shadow, opacity;
+  transition-duration: 180ms;
+  transition-timing-function: ease-out;
+}
+button:active { transform: scale(.98); }
+
+/* Phone simulator elevation */
+#simulator .rounded-\[2\.5rem\] {
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7), 0 0 80px rgba(0, 178, 89, 0.15);
+  border-color: #1F382B !important;
+  background-color: #0A0F0D !important;
+}
+
+/* Section rhythm */
+section[id] { scroll-margin-top: 88px; }
+
+/* Subtle animated grid for product/technology sections */
+.grid-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .24;
+  background-image: linear-gradient(rgba(0, 178, 89, 0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 178, 89, 0.06) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+@media (max-width: 640px) {
+  .animate-float, .animate-float-delayed { animation: none; }
+  .card-shine:hover { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
