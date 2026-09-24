@@ -76,6 +76,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownloadModal, onOpenQR })
             Download
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-400 transition-all duration-200 group-hover:w-full"></span>
           </a>
+          <a href="#staff-portal" className="relative hover:text-[#FF9800] transition-colors py-1 group font-semibold text-[#FF9800]">
+            Staff Apps 🔑
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FF9800] transition-all duration-200 group-hover:w-full"></span>
+          </a>
           <a href="#faq" className="relative hover:text-white transition-colors py-1 group">
             FAQ
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-400 transition-all duration-200 group-hover:w-full"></span>
@@ -162,6 +166,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownloadModal, onOpenQR })
               className="px-3 py-2 rounded-lg hover:bg-neutral-900 hover:text-white transition-colors"
             >
               Download CartIT
+            </a>
+            <a
+              href="#staff-portal"
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-3 py-2 rounded-lg hover:bg-neutral-900 text-[#FF9800] font-semibold transition-colors flex items-center justify-between"
+            >
+              <span>Staff Apps & Rider Download</span>
+              <span className="text-[10px] bg-[#FF9800]/20 text-[#FF9800] px-2 py-0.5 rounded font-mono">STAFF</span>
             </a>
             <a
               href="#faq"

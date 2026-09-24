@@ -12,6 +12,7 @@ import { HowItWorksSection } from './components/HowItWorksSection';
 import { SavingsCalculator } from './components/SavingsCalculator';
 import { StoreFinder } from './components/StoreFinder';
 import { DownloadSection } from './components/DownloadSection';
+import { StaffPortalSection } from './components/StaffPortalSection';
 import { CustomerSupportSection } from './components/CustomerSupportSection';
 import { FAQSection } from './components/FAQSection';
 import { Footer } from './components/Footer';
@@ -64,6 +65,9 @@ export default function App() {
         </div>
 
         <DownloadSection onOpenQR={() => setIsQRModalOpen(true)} />
+
+        {/* Staff & Rider Application Download Portal */}
+        <StaffPortalSection onOpenQR={() => setIsQRModalOpen(true)} />
 
         <CustomerSupportSection onOpenLiveChat={() => setIsChatOpen(true)} />
 

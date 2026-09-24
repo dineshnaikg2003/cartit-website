@@ -40,6 +40,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenDownload, onOpenChat }) =>
             <a href="#download" className="hover:text-white transition-colors">
               Download App
             </a>
+            <a href="#staff-portal" className="text-[#FF9800] hover:underline font-semibold transition-colors">
+              Staff & Rider Apps 🔑
+            </a>
             <button 
               onClick={onOpenChat}
               className="hover:text-emerald-400 transition-colors cursor-pointer"
