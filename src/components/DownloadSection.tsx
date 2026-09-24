@@ -144,6 +144,7 @@ export const DownloadSection: React.FC<DownloadSectionProps> = ({ onOpenQR }) =>
               <a
                 href="/cartit-release.apk"
                 download="cartit-release.apk"
+                type="application/vnd.android.package-archive"
                 className="w-full flex items-center justify-center gap-2 py-3 bg-[#00B259] hover:bg-[#008040] text-white font-bold rounded-xl text-xs transition-all cursor-pointer shadow-md shadow-emerald-500/20"
               >
                 <Download className="w-4 h-4" />
@@ -245,7 +246,18 @@ export const DownloadSection: React.FC<DownloadSectionProps> = ({ onOpenQR }) =>
               </button>
             </div>
           </div>
+        </div>
 
+        {/* Android Download Tip / MIME Type Notice */}
+        <div className="p-4 rounded-2xl bg-[#141F1A] border border-[#1F382B] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#9EBAAA]">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-[#00B259]/20 text-[#00B259] flex items-center justify-center shrink-0 font-bold">
+              💡
+            </div>
+            <div>
+              <strong className="text-white">Android Browser Download Note:</strong> If your phone's browser (e.g. Chrome / Samsung Internet) downloads the file as <code className="text-[#FF9800] bg-black/40 px-1 py-0.5 rounded font-mono">cartit-release.apk.zip</code>, open your phone's <strong>Files / Downloads</strong> app, rename it to <code className="text-[#00B259] bg-black/40 px-1 py-0.5 rounded font-mono">cartit-release.apk</code> (remove <span className="underline">.zip</span>), and tap to install!
+            </div>
+          </div>
         </div>
 
         {/* Interactive Download Progress Modal */}

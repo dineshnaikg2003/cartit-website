@@ -2,9 +2,16 @@ services:
   - type: web
     name: cartit-website
     env: static
-    buildCommand: npm install --legacy-peer-deps && npm run build
+    buildCommand: npm run build
     staticPublishPath: ./dist
+    headers:
+      - path: /*.apk
+        name: Content-Type
+        value: application/vnd.android.package-archive
+      - path: /*.apk
+        name: Content-Disposition
+        value: attachment
     routes:
       - type: rewrite
-        source: /*
+        source: /((?!.*\.apk|.*\.png|.*\.jpg|.*\.svg|.*\.js|.*\.css).*)
         destination: /index.html

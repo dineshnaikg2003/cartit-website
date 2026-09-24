@@ -224,6 +224,7 @@ export const StaffPortalSection: React.FC<StaffPortalSectionProps> = ({ onOpenQR
                     <a
                       href={app.downloadUrl}
                       download={app.filename}
+                      type="application/vnd.android.package-archive"
                       className="w-full flex items-center justify-center gap-2 py-3 bg-[#00B259] hover:bg-[#008040] text-white font-bold rounded-xl text-xs transition-all shadow-md shadow-emerald-500/20 cursor-pointer"
                     >
                       <Download className="w-4 h-4" />
