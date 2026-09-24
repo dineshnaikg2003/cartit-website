@@ -17,5 +17,8 @@ export default defineConfig(() => {
         ignored: ['**/*.apk'],
       },
     },
+    preview: {
+      allowedHosts: true,
+    },
   };
 });
