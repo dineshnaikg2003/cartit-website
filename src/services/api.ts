@@ -192,6 +192,63 @@ export class RenderApiService {
   }
 
   /**
+   * Search products in Render database
+   */
+  async searchProducts(query: string): Promise<LiveProduct[]> {
+    try {
+      const res = await fetch(`${RENDER_BACKEND_URL}/products/search?query=${encodeURIComponent(query)}`, {
+        method: 'GET',
+        headers: this.getHeaders(),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        return Array.isArray(data) ? data : data.content || [];
+      }
+    } catch (e) {
+      console.warn("Render DB Product search fallback active", e);
+    }
+    return [];
+  }
+
+  /**
+   * Fetch brands from Render database
+   */
+  async getBrands(): Promise<any[]> {
+    try {
+      const res = await fetch(`${RENDER_BACKEND_URL}/brands`, {
+        method: 'GET',
+        headers: this.getHeaders(),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        return Array.isArray(data) ? data : data.content || [];
+      }
+    } catch (e) {
+      console.warn("Render DB Brands fallback active", e);
+    }
+    return [];
+  }
+
+  /**
+   * Fetch active offers from Render database
+   */
+  async getOffers(): Promise<any[]> {
+    try {
+      const res = await fetch(`${RENDER_BACKEND_URL}/offers`, {
+        method: 'GET',
+        headers: this.getHeaders(),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        return Array.isArray(data) ? data : data.content || [];
+      }
+    } catch (e) {
+      console.warn("Render DB Offers fallback active", e);
+    }
+    return [];
+  }
+
+  /**
    * Fetch active coupons from Render database
    */
   async getActiveCoupons(): Promise<LiveCoupon[]> {
@@ -206,6 +263,43 @@ export class RenderApiService {
       }
     } catch (e) {
       console.warn("Render DB Coupons fallback active", e);
+    }
+    return [];
+  }
+
+  /**
+   * Fetch user profile from Render database
+   */
+  async getUserProfile(): Promise<any | null> {
+    try {
+      const res = await fetch(`${RENDER_BACKEND_URL}/profile`, {
+        method: 'GET',
+        headers: this.getHeaders(),
+      });
+      if (res.ok) {
+        return await res.json();
+      }
+    } catch (e) {
+      console.warn("Render DB Profile fallback active", e);
+    }
+    return null;
+  }
+
+  /**
+   * Fetch user addresses from Render database
+   */
+  async getAddresses(): Promise<any[]> {
+    try {
+      const res = await fetch(`${RENDER_BACKEND_URL}/addresses`, {
+        method: 'GET',
+        headers: this.getHeaders(),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        return Array.isArray(data) ? data : data.content || [];
+      }
+    } catch (e) {
+      console.warn("Render DB Addresses fallback active", e);
     }
     return [];
   }
@@ -228,6 +322,25 @@ export class RenderApiService {
     }
     return [];
   }
+
+  /**
+   * Fetch user cart from Render database
+   */
+  async getCart(): Promise<any | null> {
+    try {
+      const res = await fetch(`${RENDER_BACKEND_URL}/cart`, {
+        method: 'GET',
+        headers: this.getHeaders(),
+      });
+      if (res.ok) {
+        return await res.json();
+      }
+    } catch (e) {
+      console.warn("Render DB Cart fallback active", e);
+    }
+    return null;
+  }
 }
 
 export const renderApi = RenderApiService.getInstance();
+

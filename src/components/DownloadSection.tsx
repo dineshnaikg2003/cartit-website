@@ -119,10 +119,10 @@ export const DownloadSection: React.FC<DownloadSectionProps> = ({ onOpenQR }) =>
         {/* Download Options Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           
-          {/* Option 1: Direct Android APK */}
-          <div className="p-6 rounded-2xl bg-[#141F1A] border-2 border-[#00B259]/60 shadow-xl flex flex-col justify-between space-y-6 relative overflow-hidden group">
+          {/* Option 1: Direct Android APK (AVAILABLE) */}
+          <div className="p-6 rounded-2xl bg-[#141F1A] border-2 border-[#00B259] shadow-xl flex flex-col justify-between space-y-6 relative overflow-hidden group">
             <div className="absolute -right-3 -top-3 bg-[#00B259] text-white font-black text-[9px] px-3 py-1 rounded-bl-xl uppercase tracking-wider">
-              RECOMMENDED APK
+              OFFICIAL APK RELEASE
             </div>
 
             <div className="space-y-4">
@@ -130,8 +130,8 @@ export const DownloadSection: React.FC<DownloadSectionProps> = ({ onOpenQR }) =>
                 <img src="/app_logo.png" alt="CartIT Logo" className="w-9 h-9 rounded-lg object-cover" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white">Direct Release APK</h3>
-                <p className="text-xs text-[#9EBAAA] mt-1">Official built Android APK (v1.0.0+1). Ready for direct phone installation.</p>
+                <h3 className="text-lg font-bold text-white">CartIT Android App (APK)</h3>
+                <p className="text-xs text-[#9EBAAA] mt-1">Official release APK build (v1.0.0+1). Direct 1-tap download and installation on any Android phone.</p>
               </div>
             </div>
 
@@ -152,83 +152,96 @@ export const DownloadSection: React.FC<DownloadSectionProps> = ({ onOpenQR }) =>
             </div>
           </div>
 
-          {/* Option 2: Google Play Store */}
-          <div className="p-6 rounded-2xl bg-[#141F1A] border border-[#1F382B] flex flex-col justify-between space-y-6">
+          {/* Option 2: Google Play Store (COMING SOON) */}
+          <div className="p-6 rounded-2xl bg-[#141F1A] border border-[#1F382B] flex flex-col justify-between space-y-6 opacity-90 relative">
+            <div className="absolute top-3 right-3 bg-[#FF9800]/20 text-[#FF9800] border border-[#FF9800]/40 font-bold text-[9px] px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+              Coming Soon
+            </div>
+
             <div className="space-y-4">
               <div className="w-12 h-12 rounded-xl bg-[#0A0F0D] border border-[#1F382B] flex items-center justify-center text-[#00B259]">
                 <Smartphone className="w-6 h-6" />
               </div>
               <div>
                 <h3 className="text-lg font-bold text-white">Google Play Store</h3>
-                <p className="text-xs text-[#9EBAAA] mt-1">Install from Google Play Store for automatic background updates.</p>
+                <p className="text-xs text-[#9EBAAA] mt-1">Listing under Play Store review. Please download the direct APK for instant access.</p>
               </div>
             </div>
 
             <div className="space-y-3 pt-2">
               <div className="flex items-center justify-between text-[11px] text-[#9EBAAA]">
-                <span>Status: <strong className="text-[#00B259]">Verified Play Protect</strong></span>
+                <span>Status: <strong className="text-[#FF9800]">Coming Soon to Play Store</strong></span>
               </div>
 
-              <button
-                onClick={() => startInteractiveDownload('android', 'cartit-release.apk')}
+              <a
+                href="/cartit-release.apk"
+                download="cartit-release.apk"
                 className="w-full flex items-center justify-center gap-2 py-3 bg-[#0A0F0D] hover:bg-[#1F382B] text-white border border-[#1F382B] font-bold rounded-xl text-xs transition-all cursor-pointer"
               >
                 <Download className="w-4 h-4 text-[#00B259]" />
-                <span>Download via Play Store</span>
-              </button>
+                <span>Get Direct APK Instead</span>
+              </a>
             </div>
           </div>
 
-          {/* Option 3: iOS App Store */}
-          <div className="p-6 rounded-2xl bg-[#141F1A] border border-[#1F382B] flex flex-col justify-between space-y-6">
+          {/* Option 3: iOS App Store (COMING SOON) */}
+          <div className="p-6 rounded-2xl bg-[#141F1A] border border-[#1F382B] flex flex-col justify-between space-y-6 opacity-85 relative">
+            <div className="absolute top-3 right-3 bg-[#FF9800]/20 text-[#FF9800] border border-[#FF9800]/40 font-bold text-[9px] px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+              Coming Soon
+            </div>
+
             <div className="space-y-4">
               <div className="w-12 h-12 rounded-xl bg-[#0A0F0D] border border-[#1F382B] flex items-center justify-center text-[#FF9800]">
                 <Smartphone className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white">Apple App Store</h3>
-                <p className="text-xs text-[#9EBAAA] mt-1">For iPhone & iPad devices running iOS 15.0 or later.</p>
+                <h3 className="text-lg font-bold text-white">Apple App Store (iOS)</h3>
+                <p className="text-xs text-[#9EBAAA] mt-1">iOS App for iPhone and iPad currently under TestFlight beta review.</p>
               </div>
             </div>
 
             <div className="space-y-3 pt-2">
               <div className="flex items-center justify-between text-[11px] text-[#9EBAAA]">
-                <span>Status: <strong className="text-white font-mono">iOS 15.0+ Compatible</strong></span>
+                <span>Status: <strong className="text-[#FF9800]">iOS App Coming Soon</strong></span>
               </div>
 
               <button
-                onClick={onOpenQR}
-                className="w-full flex items-center justify-center gap-2 py-3 bg-[#0A0F0D] hover:bg-[#1F382B] text-white border border-[#1F382B] font-bold rounded-xl text-xs transition-all cursor-pointer"
+                onClick={() => alert("CartIT iOS App is Coming Soon! 🚀 Please use the Android APK or test in our interactive simulator.")}
+                className="w-full flex items-center justify-center gap-2 py-3 bg-[#0A0F0D] hover:bg-[#1F382B] text-[#9EBAAA] hover:text-white border border-[#1F382B] font-bold rounded-xl text-xs transition-all cursor-pointer"
               >
-                <QrCode className="w-4 h-4 text-[#FF9800]" />
-                <span>Scan iPhone QR Code</span>
+                <Info className="w-4 h-4 text-[#FF9800]" />
+                <span>iOS App - Coming Soon 🚀</span>
               </button>
             </div>
           </div>
 
-          {/* Option 4: Web PWA App */}
-          <div className="p-6 rounded-2xl bg-[#141F1A] border border-[#1F382B] flex flex-col justify-between space-y-6">
+          {/* Option 4: CartIT Delivery & Partner App (COMING SOON) */}
+          <div className="p-6 rounded-2xl bg-[#141F1A] border border-[#1F382B] flex flex-col justify-between space-y-6 opacity-85 relative">
+            <div className="absolute top-3 right-3 bg-[#FF9800]/20 text-[#FF9800] border border-[#FF9800]/40 font-bold text-[9px] px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+              Coming Soon
+            </div>
+
             <div className="space-y-4">
               <div className="w-12 h-12 rounded-xl bg-[#0A0F0D] border border-[#1F382B] flex items-center justify-center text-[#00B259]">
                 <FileCode className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white">CartIT Web PWA</h3>
-                <p className="text-xs text-[#9EBAAA] mt-1">Order directly in your browser without installing any app.</p>
+                <h3 className="text-lg font-bold text-white">Partner & Rider App</h3>
+                <p className="text-xs text-[#9EBAAA] mt-1">Dedicated application for CartIT delivery partners and dark store managers.</p>
               </div>
             </div>
 
             <div className="space-y-3 pt-2">
               <div className="flex items-center justify-between text-[11px] text-[#9EBAAA]">
-                <span>Status: <strong className="text-[#00B259]">Instant Browser Mode</strong></span>
+                <span>Status: <strong className="text-[#FF9800]">Partner App Coming Soon</strong></span>
               </div>
 
               <button
-                onClick={copyAppStoreLink}
-                className="w-full flex items-center justify-center gap-2 py-3 bg-[#0A0F0D] hover:bg-[#1F382B] text-white border border-[#1F382B] font-bold rounded-xl text-xs transition-all cursor-pointer"
+                onClick={() => alert("CartIT Delivery Partner & Merchant App is Coming Soon! 🚀")}
+                className="w-full flex items-center justify-center gap-2 py-3 bg-[#0A0F0D] hover:bg-[#1F382B] text-[#9EBAAA] hover:text-white border border-[#1F382B] font-bold rounded-xl text-xs transition-all cursor-pointer"
               >
-                <Copy className="w-4 h-4 text-[#00B259]" />
-                <span>{copiedLink ? 'Link Copied!' : 'Copy Web App Link'}</span>
+                <Info className="w-4 h-4 text-[#00B259]" />
+                <span>Partner App - Coming Soon 🚀</span>
               </button>
             </div>
           </div>

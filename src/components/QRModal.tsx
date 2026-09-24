@@ -8,16 +8,16 @@ interface QRModalProps {
 
 export const QRModal: React.FC<QRModalProps> = ({ isOpen, onClose }) => {
   const [copied, setCopied] = useState(false);
-  const [activeTab, setActiveTab] = useState<'ios' | 'android' | 'apk'>('ios');
+  const [activeTab, setActiveTab] = useState<'apk' | 'android' | 'ios'>('apk');
 
   if (!isOpen) return null;
 
   const downloadUrl =
-    activeTab === 'ios'
-      ? 'https://apps.apple.com/app/cartit-smart-checkout'
+    activeTab === 'apk'
+      ? `${window.location.origin}/cartit-release.apk`
       : activeTab === 'android'
-      ? 'https://play.google.com/store/apps/details?id=com.cartit.retail'
-      : 'https://cartit.app/releases/v2.4.1/cartit.apk';
+      ? `${window.location.origin}/cartit-release.apk`
+      : 'https://cartit.app/#ios-coming-soon';
 
   const handleCopy = () => {
     navigator.clipboard?.writeText(downloadUrl);
@@ -53,14 +53,14 @@ export const QRModal: React.FC<QRModalProps> = ({ isOpen, onClose }) => {
         {/* Platform Selector Buttons */}
         <div className="flex items-center gap-1 p-1 bg-neutral-900 border border-neutral-800 rounded-xl">
           <button
-            onClick={() => setActiveTab('ios')}
+            onClick={() => setActiveTab('apk')}
             className={`flex-1 py-1.5 text-xs font-semibold rounded-lg transition-colors cursor-pointer ${
-              activeTab === 'ios'
-                ? 'bg-neutral-800 text-white shadow-sm'
+              activeTab === 'apk'
+                ? 'bg-[#00B259] text-white font-bold shadow-sm'
                 : 'text-neutral-400 hover:text-white'
             }`}
           >
-            Apple iOS
+            Android APK
           </button>
           <button
             onClick={() => setActiveTab('android')}
@@ -73,14 +73,14 @@ export const QRModal: React.FC<QRModalProps> = ({ isOpen, onClose }) => {
             Google Play
           </button>
           <button
-            onClick={() => setActiveTab('apk')}
+            onClick={() => setActiveTab('ios')}
             className={`flex-1 py-1.5 text-xs font-semibold rounded-lg transition-colors cursor-pointer ${
-              activeTab === 'apk'
+              activeTab === 'ios'
                 ? 'bg-neutral-800 text-white shadow-sm'
                 : 'text-neutral-400 hover:text-white'
             }`}
           >
-            Direct APK
+            Apple iOS 🚀
           </button>
         </div>
 
