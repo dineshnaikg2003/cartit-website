@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingBag, Download, Menu, X, QrCode, ArrowUpRight } from 'lucide-react';
+import { Download, Menu, X, QrCode, Shield, Bike } from 'lucide-react';
 
 interface NavbarProps {
   onOpenDownloadModal: () => void;
@@ -29,7 +29,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownloadModal, onOpenQR })
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         
         {/* Zone 1: Brand Logo & Wordmark */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 shrink-0">
           <a 
             href="#" 
             className="text-xl font-bold tracking-tight text-white flex items-center gap-2.5 hover:opacity-90 transition-all group shrink-0"
@@ -44,47 +44,50 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownloadModal, onOpenQR })
         </div>
 
         {/* Zone 2: Navigation Links (Responsive Breakpoint: lg & xl) */}
-        <nav className="hidden lg:flex items-center gap-4 xl:gap-6 text-xs xl:text-sm font-medium text-neutral-300">
-          <a href="#about" className="relative hover:text-white transition-colors py-1 group">
-            About Us
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-400 transition-all duration-200 group-hover:w-full"></span>
+        <nav className="hidden lg:flex items-center gap-3 xl:gap-5 text-xs xl:text-sm font-medium text-neutral-300">
+          <a href="#about" className="hover:text-white transition-colors py-1">
+            About
           </a>
-          <a href="#how-it-works" className="relative hover:text-white transition-colors py-1 group">
+          <a href="#how-it-works" className="hover:text-white transition-colors py-1">
             How It Works
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-400 transition-all duration-200 group-hover:w-full"></span>
           </a>
-          <a href="#simulator" className="relative hover:text-white transition-colors py-1 group">
-            Live Simulator
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-400 transition-all duration-200 group-hover:w-full"></span>
+          <a href="#simulator" className="hover:text-white transition-colors py-1">
+            Simulator
           </a>
-          <a href="#calculator" className="hidden xl:inline-block relative hover:text-white transition-colors py-1 group">
-            Savings Calculator
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-400 transition-all duration-200 group-hover:w-full"></span>
+          <a href="#calculator" className="hidden xl:inline-block hover:text-white transition-colors py-1">
+            Calculator
           </a>
-          <a href="#stores" className="hidden xl:inline-block relative hover:text-white transition-colors py-1 group">
+          <a href="#stores" className="hidden xl:inline-block hover:text-white transition-colors py-1">
             Stores
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-400 transition-all duration-200 group-hover:w-full"></span>
           </a>
-          <a href="#download" className="relative hover:text-white transition-colors py-1 group">
+          <a href="#download" className="hover:text-white transition-colors py-1">
             Download
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-400 transition-all duration-200 group-hover:w-full"></span>
           </a>
-          <a href="#admin-portal" className="relative hover:text-[#3B82F6] transition-colors py-1 group font-bold text-[#3B82F6] flex items-center gap-1 bg-[#3B82F6]/10 px-2.5 py-1 rounded-lg border border-[#3B82F6]/30">
+
+          {/* Operations & Admin Apps Highlights */}
+          <a 
+            href="#admin-portal" 
+            className="hover:text-white transition-all py-1 px-2.5 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/30 text-blue-400 font-semibold flex items-center gap-1.5 shrink-0"
+          >
+            <Shield className="w-3.5 h-3.5" />
             <span>Admin App</span>
-            <span className="text-[10px]">🛡️</span>
           </a>
-          <a href="#staff-portal" className="relative hover:text-[#00B259] transition-colors py-1 group font-bold text-[#00B259] flex items-center gap-1 bg-[#00B259]/10 px-2.5 py-1 rounded-lg border border-[#00B259]/30">
+
+          <a 
+            href="#staff-portal" 
+            className="hover:text-white transition-all py-1 px-2.5 rounded-lg bg-[#00B259]/10 hover:bg-[#00B259]/20 border border-[#00B259]/30 text-[#00B259] font-semibold flex items-center gap-1.5 shrink-0"
+          >
+            <Bike className="w-3.5 h-3.5" />
             <span>Rider App</span>
-            <span className="text-[10px]">🚲</span>
           </a>
-          <a href="#faq" className="relative hover:text-white transition-colors py-1 group">
+
+          <a href="#faq" className="hover:text-white transition-colors py-1">
             FAQ
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-400 transition-all duration-200 group-hover:w-full"></span>
           </a>
         </nav>
 
         {/* Zone 3: Actions (QR Code & Get App) */}
-        <div className="hidden sm:flex items-center gap-2 sm:gap-3">
+        <div className="hidden sm:flex items-center gap-2 sm:gap-3 shrink-0">
           {onOpenQR && (
             <button
               onClick={onOpenQR}
@@ -162,23 +165,29 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownloadModal, onOpenQR })
               onClick={() => setMobileMenuOpen(false)}
               className="px-3 py-2 rounded-lg hover:bg-neutral-900 hover:text-white transition-colors"
             >
-              Download CartIT
+              Download Customer App
             </a>
             <a
               href="#admin-portal"
               onClick={() => setMobileMenuOpen(false)}
-              className="px-3 py-2 rounded-lg hover:bg-neutral-900 text-[#3B82F6] font-semibold transition-colors flex items-center justify-between"
+              className="px-3 py-2 rounded-lg bg-blue-500/10 text-blue-400 font-semibold transition-colors flex items-center justify-between border border-blue-500/30"
             >
-              <span>Admin App & Super Admin Portal</span>
-              <span className="text-[10px] bg-[#3B82F6]/20 text-[#3B82F6] px-2 py-0.5 rounded font-mono">ADMIN</span>
+              <span className="flex items-center gap-2">
+                <Shield className="w-4 h-4" />
+                <span>Admin App (Super Admin)</span>
+              </span>
+              <span className="text-[10px] bg-blue-500/20 text-blue-400 px-2 py-0.5 rounded font-mono">ADMIN</span>
             </a>
             <a
               href="#staff-portal"
               onClick={() => setMobileMenuOpen(false)}
-              className="px-3 py-2 rounded-lg hover:bg-neutral-900 text-[#FF9800] font-semibold transition-colors flex items-center justify-between"
+              className="px-3 py-2 rounded-lg bg-[#00B259]/10 text-[#00B259] font-semibold transition-colors flex items-center justify-between border border-[#00B259]/30"
             >
-              <span>Staff Apps & Rider Download</span>
-              <span className="text-[10px] bg-[#FF9800]/20 text-[#FF9800] px-2 py-0.5 rounded font-mono">STAFF</span>
+              <span className="flex items-center gap-2">
+                <Bike className="w-4 h-4" />
+                <span>Rider App (Delivery Fleet)</span>
+              </span>
+              <span className="text-[10px] bg-[#00B259]/20 text-[#00B259] px-2 py-0.5 rounded font-mono">RIDER</span>
             </a>
             <a
               href="#faq"
@@ -198,7 +207,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownloadModal, onOpenQR })
               className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-semibold text-neutral-950 bg-emerald-400 hover:bg-emerald-300 rounded-lg transition-colors cursor-pointer"
             >
               <Download className="h-4 w-4" />
-              <span>Download CartIT Mobile App</span>
+              <span>Download Customer App</span>
             </button>
           </div>
         </div>
