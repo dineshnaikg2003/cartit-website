@@ -32,6 +32,7 @@ export const StaffPortalSection: React.FC<StaffPortalSectionProps> = ({ onOpenQR
       title: 'CartIT Delivery Rider App',
       subtitle: 'For Fleet Executives & Delivery Riders',
       icon: Bike,
+      appIconUrl: '/delivery_app_icon.png',
       accentColor: 'from-[#00B259] to-[#008040]',
       badgeColor: 'bg-[#00B259]/20 text-[#00B259] border-[#00B259]/40',
       status: 'ANDROID APK RELEASE',
@@ -53,6 +54,7 @@ export const StaffPortalSection: React.FC<StaffPortalSectionProps> = ({ onOpenQR
       title: 'CartIT Dark Store Manager App',
       subtitle: 'For Store In-charges, Pickers & Packers',
       icon: Store,
+      appIconUrl: '/app_logo.png',
       accentColor: 'from-[#FF9800] to-[#E65100]',
       badgeColor: 'bg-[#FF9800]/20 text-[#FF9800] border-[#FF9800]/40',
       status: 'ANDROID APK RELEASE',
@@ -74,6 +76,7 @@ export const StaffPortalSection: React.FC<StaffPortalSectionProps> = ({ onOpenQR
       title: 'CartIT Merchant & Supplier App',
       subtitle: 'For Supermarket Owners & FMCG Brands',
       icon: BarChart3,
+      appIconUrl: '/app_logo.png',
       accentColor: 'from-emerald-400 to-teal-600',
       badgeColor: 'bg-emerald-400/20 text-emerald-400 border-emerald-400/40',
       status: 'ANDROID APK RELEASE',
@@ -177,9 +180,9 @@ export const StaffPortalSection: React.FC<StaffPortalSectionProps> = ({ onOpenQR
                 <div className="space-y-5">
                   {/* Top Bar */}
                   <div className="flex items-start justify-between">
-                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${app.accentColor} p-0.5 shadow-lg flex items-center justify-center text-white`}>
-                      <div className="w-full h-full bg-[#0A0F0D] rounded-[14px] flex items-center justify-center">
-                        <IconComp className="w-7 h-7 text-white" />
+                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${app.accentColor} p-0.5 shadow-lg flex items-center justify-center text-white shrink-0`}>
+                      <div className="w-full h-full bg-[#0A0F0D] rounded-[14px] flex items-center justify-center overflow-hidden p-1">
+                        <img src={app.appIconUrl} alt={`${app.title} Icon`} className="w-full h-full object-cover rounded-lg" />
                       </div>
                     </div>
 
