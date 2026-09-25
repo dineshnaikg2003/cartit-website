@@ -142,7 +142,7 @@ export const DownloadSection: React.FC<DownloadSectionProps> = ({ onOpenQR }) =>
               </div>
 
               <a
-                href="https://github.com/dineshnaikg2003/cartit-website/releases/download/v1.0.0/cartit-release.apk"
+                href="/cartit-release.apk"
                 download="cartit-release.apk"
                 type="application/vnd.android.package-archive"
                 className="w-full flex items-center justify-center gap-2 py-3 bg-[#00B259] hover:bg-[#008040] text-white font-bold rounded-xl text-xs transition-all cursor-pointer shadow-md shadow-emerald-500/20"

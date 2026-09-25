@@ -5,19 +5,33 @@ import { QRCodeSVG } from 'qrcode.react';
 interface QRModalProps {
   isOpen: boolean;
   onClose: () => void;
+  title?: string;
+  apkUrl?: string;
 }
 
-export const QRModal: React.FC<QRModalProps> = ({ isOpen, onClose }) => {
+export const QRModal: React.FC<QRModalProps> = ({
+  isOpen,
+  onClose,
+  title = "Scan with Phone Camera",
+  apkUrl = "/cartit-release.apk"
+}) => {
   const [copied, setCopied] = useState(false);
   const [activeTab, setActiveTab] = useState<'apk' | 'android' | 'ios'>('apk');
 
   if (!isOpen) return null;
 
+  const origin = typeof window !== 'undefined' && window.location.origin ? window.location.origin : 'https://cartit-website.onrender.com';
+
+  const getFullUrl = (path: string) => {
+    if (path.startsWith('http')) return path;
+    return `${origin}${path.startsWith('/') ? '' : '/'}${path}`;
+  };
+
   const downloadUrl =
     activeTab === 'apk'
-      ? 'https://github.com/dineshnaikg2003/cartit-website/releases/download/v1.0.0/cartit-release.apk'
+      ? getFullUrl(apkUrl)
       : activeTab === 'android'
-      ? 'https://github.com/dineshnaikg2003/cartit-website/releases/download/v1.0.0/cartit-release.apk'
+      ? getFullUrl(apkUrl)
       : 'https://cartit.app/#ios-coming-soon';
 
   const handleCopy = () => {
@@ -39,7 +53,7 @@ export const QRModal: React.FC<QRModalProps> = ({ isOpen, onClose }) => {
           <div className="flex items-center gap-2">
             <QrCode className="w-5 h-5 text-emerald-400" />
             <h3 id="qr-modal-title" className="text-base font-bold text-white">
-              Scan with Phone Camera
+              {title}
             </h3>
           </div>
           <button
@@ -71,7 +85,7 @@ export const QRModal: React.FC<QRModalProps> = ({ isOpen, onClose }) => {
                 : 'text-neutral-400 hover:text-white'
             }`}
           >
-            Google Play
+            Direct Web Link
           </button>
           <button
             onClick={() => setActiveTab('ios')}
@@ -107,9 +121,9 @@ export const QRModal: React.FC<QRModalProps> = ({ isOpen, onClose }) => {
           </div>
           <span className="text-[11px] font-bold text-neutral-800 font-mono text-center">
             {activeTab === 'apk'
-              ? 'CartIT Customer Android Release APK (54.6 MB)'
+              ? `CartIT Direct Android Release APK`
               : activeTab === 'android'
-              ? 'CartIT Google Play Direct Download'
+              ? `CartIT Direct Server Download`
               : 'iOS App Store — Coming Soon 🚀'}
           </span>
         </div>
