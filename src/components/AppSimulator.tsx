@@ -68,6 +68,94 @@ const FALLBACK_PRODUCTS: ProductItem[] = [
     rating: 4.9
   },
   {
+    id: 'p7',
+    name: 'Shimla Red Royal Apples',
+    brand: 'Shimla Orchards',
+    category: 'Fresh Produce',
+    price: 140,
+    originalPrice: 175,
+    unit: '1 kg',
+    image: '🍎',
+    rating: 4.8
+  },
+  {
+    id: 'p8',
+    name: 'Fresh Hybrid Farm Tomatoes',
+    brand: 'Farm Direct',
+    category: 'Fresh Produce',
+    price: 35,
+    originalPrice: 45,
+    unit: '1 kg',
+    image: '🍅',
+    rating: 4.7
+  },
+  {
+    id: 'p9',
+    name: 'Organic Green Broccoli',
+    brand: 'Farm Direct',
+    category: 'Fresh Produce',
+    price: 60,
+    originalPrice: 80,
+    unit: '500g',
+    image: '🥦',
+    rating: 4.9
+  },
+  {
+    id: 'p10',
+    name: 'Robusta Yellow Bananas',
+    brand: 'Robusta Organic',
+    category: 'Fresh Produce',
+    price: 50,
+    originalPrice: 65,
+    unit: '1 Dozen',
+    image: '🍌',
+    rating: 4.6
+  },
+  {
+    id: 'p11',
+    name: 'Hydroponic Baby Spinach (Palak)',
+    brand: 'Hydroponic Greens',
+    category: 'Fresh Produce',
+    price: 30,
+    originalPrice: 40,
+    unit: '250g bunch',
+    image: '🥬',
+    rating: 4.8
+  },
+  {
+    id: 'p12',
+    name: 'Crisp Ooty Carrots',
+    brand: 'Ooty Organic',
+    category: 'Fresh Produce',
+    price: 45,
+    originalPrice: 60,
+    unit: '500g',
+    image: '🥕',
+    rating: 4.7
+  },
+  {
+    id: 'p13',
+    name: 'Fresh Hass Avocados',
+    brand: 'Imported Premium',
+    category: 'Fresh Produce',
+    price: 160,
+    originalPrice: 190,
+    unit: 'Pack of 2',
+    image: '🥑',
+    rating: 4.9
+  },
+  {
+    id: 'p14',
+    name: 'Mahabaleshwar Sweet Strawberries',
+    brand: 'Mahabaleshwar Organic',
+    category: 'Fresh Produce',
+    price: 120,
+    originalPrice: 150,
+    unit: '200g box',
+    image: '🍓',
+    rating: 4.9
+  },
+  {
     id: 'p3',
     name: 'South Indian Filter Coffee Powder',
     brand: 'Blue Tokai Roasters',
