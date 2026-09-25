@@ -73,9 +73,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownloadModal, onOpenQR })
             <span>Admin App</span>
             <span className="text-[10px]">🛡️</span>
           </a>
-          <a href="#staff-portal" className="relative hover:text-[#FF9800] transition-colors py-1 group font-bold text-[#FF9800] flex items-center gap-1 bg-[#FF9800]/10 px-2.5 py-1 rounded-lg border border-[#FF9800]/30">
-            <span>Staff Apps</span>
-            <span className="text-[10px]">🔑</span>
+          <a href="#staff-portal" className="relative hover:text-[#00B259] transition-colors py-1 group font-bold text-[#00B259] flex items-center gap-1 bg-[#00B259]/10 px-2.5 py-1 rounded-lg border border-[#00B259]/30">
+            <span>Rider App</span>
+            <span className="text-[10px]">🚲</span>
           </a>
           <a href="#faq" className="relative hover:text-white transition-colors py-1 group">
             FAQ
