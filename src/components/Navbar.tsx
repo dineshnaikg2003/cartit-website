@@ -43,31 +43,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownloadModal, onOpenQR })
           </a>
         </div>
 
-        {/* Zone 2: Navigation Links (Responsive Breakpoint: lg & xl) */}
-        <nav className="hidden lg:flex items-center gap-3 xl:gap-5 text-xs xl:text-sm font-medium text-neutral-300">
+        {/* Zone 2: Navigation Links */}
+        <nav className="hidden md:flex items-center gap-4 xl:gap-6 text-xs xl:text-sm font-medium text-neutral-300">
           <a href="#about" className="hover:text-white transition-colors py-1">
-            About
-          </a>
-          <a href="#how-it-works" className="hover:text-white transition-colors py-1">
-            How It Works
-          </a>
-          <a href="#simulator" className="hover:text-white transition-colors py-1">
-            Simulator
-          </a>
-          <a href="#calculator" className="hidden xl:inline-block hover:text-white transition-colors py-1">
-            Calculator
-          </a>
-          <a href="#stores" className="hidden xl:inline-block hover:text-white transition-colors py-1">
-            Stores
+            About Us
           </a>
           <a href="#download" className="hover:text-white transition-colors py-1">
-            Download
+            Download App
           </a>
 
           {/* Operations & Admin Apps Highlights */}
           <a 
             href="#admin-portal" 
-            className="hover:text-white transition-all py-1 px-2.5 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/30 text-blue-400 font-semibold flex items-center gap-1.5 shrink-0"
+            className="hover:text-white transition-all py-1 px-3 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 border border-blue-500/30 text-blue-400 font-semibold flex items-center gap-1.5 shrink-0"
           >
             <Shield className="w-3.5 h-3.5" />
             <span>Admin App</span>
@@ -75,7 +63,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownloadModal, onOpenQR })
 
           <a 
             href="#staff-portal" 
-            className="hover:text-white transition-all py-1 px-2.5 rounded-lg bg-[#00B259]/10 hover:bg-[#00B259]/20 border border-[#00B259]/30 text-[#00B259] font-semibold flex items-center gap-1.5 shrink-0"
+            className="hover:text-white transition-all py-1 px-3 rounded-lg bg-[#00B259]/10 hover:bg-[#00B259]/20 border border-[#00B259]/30 text-[#00B259] font-semibold flex items-center gap-1.5 shrink-0"
           >
             <Bike className="w-3.5 h-3.5" />
             <span>Rider App</span>
@@ -109,8 +97,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownloadModal, onOpenQR })
           </button>
         </div>
 
-        {/* Mobile / Tablet Menu Trigger (Visible on < lg) */}
-        <div className="flex lg:hidden items-center gap-2">
+        {/* Mobile / Tablet Menu Trigger (Visible on < md) */}
+        <div className="flex md:hidden items-center gap-2">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 text-neutral-400 hover:text-white rounded-lg bg-neutral-900 border border-neutral-800 transition-colors"
@@ -121,9 +109,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownloadModal, onOpenQR })
         </div>
       </div>
 
-      {/* Mobile & Tablet Drawer with Smooth Transitions */}
+      {/* Mobile & Tablet Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-b border-neutral-800 bg-neutral-950/98 backdrop-blur-xl px-4 pt-2 pb-5 space-y-3 animate-fade-in">
+        <div className="md:hidden border-b border-neutral-800 bg-neutral-950/98 backdrop-blur-xl px-4 pt-2 pb-5 space-y-3 animate-fade-in">
           <nav className="flex flex-col space-y-1 pt-2 text-sm font-medium text-neutral-300">
             <a
               href="#about"
@@ -131,34 +119,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownloadModal, onOpenQR })
               className="px-3 py-2 rounded-lg hover:bg-neutral-900 hover:text-white transition-colors"
             >
               About Us
-            </a>
-            <a
-              href="#how-it-works"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-3 py-2 rounded-lg hover:bg-neutral-900 hover:text-white transition-colors"
-            >
-              How It Works
-            </a>
-            <a
-              href="#simulator"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-3 py-2 rounded-lg hover:bg-neutral-900 hover:text-white transition-colors"
-            >
-              Live App Simulator
-            </a>
-            <a
-              href="#calculator"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-3 py-2 rounded-lg hover:bg-neutral-900 hover:text-white transition-colors"
-            >
-              Savings Calculator
-            </a>
-            <a
-              href="#stores"
-              onClick={() => setMobileMenuOpen(false)}
-              className="px-3 py-2 rounded-lg hover:bg-neutral-900 hover:text-white transition-colors"
-            >
-              Store Network Locator
             </a>
             <a
               href="#download"

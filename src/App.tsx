@@ -8,9 +8,6 @@ import { Navbar } from './components/Navbar';
 import { HeroSection } from './components/HeroSection';
 import { LiveActivityTicker } from './components/LiveActivityTicker';
 import { AboutSection } from './components/AboutSection';
-import { HowItWorksSection } from './components/HowItWorksSection';
-import { SavingsCalculator } from './components/SavingsCalculator';
-import { StoreFinder } from './components/StoreFinder';
 import { DownloadSection } from './components/DownloadSection';
 import { StaffPortalSection } from './components/StaffPortalSection';
 import { CustomerSupportSection } from './components/CustomerSupportSection';
@@ -32,7 +29,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col selection:bg-emerald-500 selection:text-white">
-      {/* Top Bar Navigation (Support Chat removed as requested) */}
+      {/* Top Bar Navigation */}
       <Navbar
         onOpenDownloadModal={handleOpenDownloadSection}
         onOpenQR={() => setIsQRModalOpen(true)}
@@ -50,23 +47,10 @@ export default function App() {
 
         <AboutSection />
 
-        <HowItWorksSection />
-
-        <div id="simulator" className="scroll-mt-20" />
-
-        {/* Interactive Savings & Time ROI Calculator */}
-        <div id="calculator" className="scroll-mt-20">
-          <SavingsCalculator onOpenDownload={handleOpenDownloadSection} />
-        </div>
-
-        {/* Interactive Store Network Locator */}
-        <div id="stores" className="scroll-mt-20">
-          <StoreFinder />
-        </div>
-
+        {/* Customer Download Section */}
         <DownloadSection onOpenQR={() => setIsQRModalOpen(true)} />
 
-        {/* Staff & Rider Application Download Portal */}
+        {/* Admin & Rider Operations Suite Download Portal */}
         <StaffPortalSection onOpenQR={() => setIsQRModalOpen(true)} />
 
         <CustomerSupportSection onOpenLiveChat={() => setIsChatOpen(true)} />
@@ -80,7 +64,7 @@ export default function App() {
         onOpenChat={() => setIsChatOpen(true)}
       />
 
-      {/* Floating Interactive Customer Support Chat Widget (Still available at bottom right) */}
+      {/* Floating Support Chat Widget */}
       <ChatWidget
         isOpen={isChatOpen}
         onOpen={() => setIsChatOpen(true)}
