@@ -3,7 +3,7 @@ import { GroceryProduct, FAQItem, ReleaseNote, DownloadOption } from '../types';
 export const COMPANY_INFO = {
   name: 'CartIT Technologies India Pvt. Ltd.',
   brandName: 'CartIT',
-  tagline: 'Superfast Grocery & Supermarket Delivery in 10-15 Minutes.',
+  tagline: 'Fresh Fruits & Veggies Express in 10-15 Minutes.',
   foundingYear: '2023',
   origin: 'Proudly Developed & Engineered in Bengaluru, India 🇮🇳',
   headquarters: 'Indiranagar & Koramangala, Bengaluru, Karnataka, India',

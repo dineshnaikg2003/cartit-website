@@ -56,9 +56,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenDownload, onOpen
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] font-display max-w-2xl">
-              Superfast Grocery & <br />
+              Fresh Fruits & <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00B259] via-[#35E59A] to-[#FF9800]">
-                Supermarket Delivery.
+                Veggies Express.
               </span>
             </h1>
 
