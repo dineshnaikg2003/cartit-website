@@ -69,6 +69,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownloadModal, onOpenQR })
             Download
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-400 transition-all duration-200 group-hover:w-full"></span>
           </a>
+          <a href="#admin-portal" className="relative hover:text-[#3B82F6] transition-colors py-1 group font-bold text-[#3B82F6] flex items-center gap-1 bg-[#3B82F6]/10 px-2.5 py-1 rounded-lg border border-[#3B82F6]/30">
+            <span>Admin App</span>
+            <span className="text-[10px]">🛡️</span>
+          </a>
           <a href="#staff-portal" className="relative hover:text-[#FF9800] transition-colors py-1 group font-bold text-[#FF9800] flex items-center gap-1 bg-[#FF9800]/10 px-2.5 py-1 rounded-lg border border-[#FF9800]/30">
             <span>Staff Apps</span>
             <span className="text-[10px]">🔑</span>
@@ -159,6 +163,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownloadModal, onOpenQR })
               className="px-3 py-2 rounded-lg hover:bg-neutral-900 hover:text-white transition-colors"
             >
               Download CartIT
+            </a>
+            <a
+              href="#admin-portal"
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-3 py-2 rounded-lg hover:bg-neutral-900 text-[#3B82F6] font-semibold transition-colors flex items-center justify-between"
+            >
+              <span>Admin App & Super Admin Portal</span>
+              <span className="text-[10px] bg-[#3B82F6]/20 text-[#3B82F6] px-2 py-0.5 rounded font-mono">ADMIN</span>
             </a>
             <a
               href="#staff-portal"

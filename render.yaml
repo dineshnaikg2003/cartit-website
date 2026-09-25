@@ -17,6 +17,12 @@ services:
       - path: /cartit-delivery-release.apk
         name: Content-Disposition
         value: attachment; filename="CartIT-Delivery-App.apk"
+      - path: /cartit-admin-release.apk
+        name: Content-Type
+        value: application/vnd.android.package-archive
+      - path: /cartit-admin-release.apk
+        name: Content-Disposition
+        value: attachment; filename="CartIT-Admin-App.apk"
       - path: /*.apk
         name: Content-Type
         value: application/vnd.android.package-archive

@@ -9,3 +9,7 @@
 /cartit-delivery-release.apk
   Content-Type: application/vnd.android.package-archive
   Content-Disposition: attachment; filename="CartIT-Delivery-App.apk"
+
+/cartit-admin-release.apk
+  Content-Type: application/vnd.android.package-archive
+  Content-Disposition: attachment; filename="CartIT-Admin-App.apk"
