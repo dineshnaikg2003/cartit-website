@@ -28,30 +28,23 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownloadModal, onOpenQR })
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         
-        {/* Zone 1: Brand Wordmark with App Logo */}
-        <div className="flex items-center gap-2.5">
+        {/* Zone 1: Brand Logo & Wordmark */}
+        <div className="flex items-center gap-2">
           <a 
             href="#" 
-            className="text-xl font-bold tracking-tight text-white flex items-center gap-2.5 hover:opacity-90 transition-all group"
+            className="text-xl font-bold tracking-tight text-white flex items-center gap-2.5 hover:opacity-90 transition-all group shrink-0"
           >
             <img 
               src="/app_logo.png" 
               alt="CartIT App Logo" 
               className="h-8 w-8 rounded-lg object-cover border border-[#00B259]/40 shadow-sm shadow-emerald-500/20 group-hover:scale-105 transition-transform"
             />
-            <span className="font-display">CartIT</span>
+            <span className="font-display tracking-tight text-white text-lg sm:text-xl">CartIT</span>
           </a>
-          <span 
-            className="hidden sm:inline-flex items-center gap-1 text-[10px] font-mono font-medium px-2 py-0.5 rounded-full bg-[#141F1A] border border-[#1F382B] text-[#9EBAAA]"
-            title="Proudly Developed & Engineered in Bengaluru, India"
-          >
-            <span>🇮🇳</span>
-            <span>Developed in India</span>
-          </span>
         </div>
 
-        {/* Zone 2: 4-6 clean text navigation links with smooth underline hover transitions */}
-        <nav className="hidden md:flex items-center gap-7 text-sm font-medium text-neutral-300">
+        {/* Zone 2: Navigation Links (Responsive Breakpoint: lg & xl) */}
+        <nav className="hidden lg:flex items-center gap-4 xl:gap-6 text-xs xl:text-sm font-medium text-neutral-300">
           <a href="#about" className="relative hover:text-white transition-colors py-1 group">
             About Us
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-400 transition-all duration-200 group-hover:w-full"></span>
@@ -64,21 +57,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownloadModal, onOpenQR })
             Live Simulator
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-400 transition-all duration-200 group-hover:w-full"></span>
           </a>
-          <a href="#calculator" className="relative hover:text-white transition-colors py-1 group">
+          <a href="#calculator" className="hidden xl:inline-block relative hover:text-white transition-colors py-1 group">
             Savings Calculator
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-400 transition-all duration-200 group-hover:w-full"></span>
           </a>
-          <a href="#stores" className="relative hover:text-white transition-colors py-1 group">
-            Store Finder
+          <a href="#stores" className="hidden xl:inline-block relative hover:text-white transition-colors py-1 group">
+            Stores
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-400 transition-all duration-200 group-hover:w-full"></span>
           </a>
           <a href="#download" className="relative hover:text-white transition-colors py-1 group">
             Download
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-emerald-400 transition-all duration-200 group-hover:w-full"></span>
           </a>
-          <a href="#staff-portal" className="relative hover:text-[#FF9800] transition-colors py-1 group font-semibold text-[#FF9800]">
-            Staff Apps 🔑
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FF9800] transition-all duration-200 group-hover:w-full"></span>
+          <a href="#staff-portal" className="relative hover:text-[#FF9800] transition-colors py-1 group font-bold text-[#FF9800] flex items-center gap-1 bg-[#FF9800]/10 px-2.5 py-1 rounded-lg border border-[#FF9800]/30">
+            <span>Staff Apps</span>
+            <span className="text-[10px]">🔑</span>
           </a>
           <a href="#faq" className="relative hover:text-white transition-colors py-1 group">
             FAQ
@@ -86,22 +79,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownloadModal, onOpenQR })
           </a>
         </nav>
 
-        {/* Zone 3: 1-2 primary actions (Support Chat strictly removed as requested) */}
-        <div className="hidden sm:flex items-center gap-3">
+        {/* Zone 3: Actions (QR Code & Get App) */}
+        <div className="hidden sm:flex items-center gap-2 sm:gap-3">
           {onOpenQR && (
             <button
               onClick={onOpenQR}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-neutral-300 hover:text-white bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 rounded-lg transition-all cursor-pointer"
+              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-neutral-300 hover:text-white bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 rounded-lg transition-all cursor-pointer shrink-0"
               title="Show mobile download QR"
             >
               <QrCode className="h-3.5 w-3.5 text-emerald-400" />
-              <span>QR Code</span>
+              <span className="hidden sm:inline">QR Code</span>
             </button>
           )}
 
           <button
             onClick={onOpenDownloadModal}
-            className="group relative flex items-center gap-1.5 px-4 py-1.5 text-xs font-semibold text-neutral-950 bg-emerald-400 hover:bg-emerald-300 rounded-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer shadow-sm shadow-emerald-500/20"
+            className="group relative flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-neutral-950 bg-emerald-400 hover:bg-emerald-300 rounded-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer shadow-sm shadow-emerald-500/20 shrink-0"
           >
             <Download className="h-3.5 w-3.5 transition-transform group-hover:translate-y-0.5" />
             <span>Get App</span>
@@ -109,8 +102,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownloadModal, onOpenQR })
           </button>
         </div>
 
-        {/* Mobile menu trigger button */}
-        <div className="flex md:hidden items-center gap-2">
+        {/* Mobile / Tablet Menu Trigger (Visible on < lg) */}
+        <div className="flex lg:hidden items-center gap-2">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 text-neutral-400 hover:text-white rounded-lg bg-neutral-900 border border-neutral-800 transition-colors"
@@ -121,9 +114,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDownloadModal, onOpenQR })
         </div>
       </div>
 
-      {/* Mobile Drawer with Smooth Transitions */}
+      {/* Mobile & Tablet Drawer with Smooth Transitions */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-neutral-800 bg-neutral-950/98 backdrop-blur-xl px-4 pt-2 pb-5 space-y-3 animate-fade-in">
+        <div className="lg:hidden border-b border-neutral-800 bg-neutral-950/98 backdrop-blur-xl px-4 pt-2 pb-5 space-y-3 animate-fade-in">
           <nav className="flex flex-col space-y-1 pt-2 text-sm font-medium text-neutral-300">
             <a
               href="#about"

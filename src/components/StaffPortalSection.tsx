@@ -34,9 +34,9 @@ export const StaffPortalSection: React.FC<StaffPortalSectionProps> = ({ onOpenQR
       icon: Bike,
       accentColor: 'from-[#00B259] to-[#008040]',
       badgeColor: 'bg-[#00B259]/20 text-[#00B259] border-[#00B259]/40',
-      status: 'AVAILABLE APK',
+      status: 'ANDROID APK RELEASE',
       version: 'v1.2.0 (Build 8)',
-      fileSize: '42.5 MB',
+      fileSize: '52.4 MB',
       downloadUrl: 'https://github.com/dineshnaikg2003/cartit-website/releases/download/v1.0.0/cartit-delivery-release.apk',
       filename: 'cartit-delivery-release.apk',
       description: 'Official mobile application for CartIT delivery partners. Receive real-time order dispatch alerts, optimized turn-by-turn route navigation, and instant payout tracking.',
@@ -55,11 +55,11 @@ export const StaffPortalSection: React.FC<StaffPortalSectionProps> = ({ onOpenQR
       icon: Store,
       accentColor: 'from-[#FF9800] to-[#E65100]',
       badgeColor: 'bg-[#FF9800]/20 text-[#FF9800] border-[#FF9800]/40',
-      status: 'ENTERPRISE APK',
+      status: 'ANDROID APK RELEASE',
       version: 'v2.1.4 (Build 12)',
       fileSize: '38.2 MB',
-      downloadUrl: '/cartit-release.apk',
-      filename: 'cartit-store-manager.apk',
+      downloadUrl: 'https://github.com/dineshnaikg2003/cartit-website/releases/download/v1.0.0/cartit-store-manager-release.apk',
+      filename: 'cartit-store-manager-release.apk',
       description: 'Streamlined warehouse and dark store operating system. Scan incoming inventory, manage order picking queues with digital checklists, and hand off packed orders to riders.',
       features: [
         'Barcode scanner for fast picking & inventory audit',
@@ -71,17 +71,17 @@ export const StaffPortalSection: React.FC<StaffPortalSectionProps> = ({ onOpenQR
     {
       id: 'merchant-app',
       category: 'merchant',
-      title: 'CartIT Merchant & Supplier Hub',
+      title: 'CartIT Merchant & Supplier App',
       subtitle: 'For Supermarket Owners & FMCG Brands',
       icon: BarChart3,
       accentColor: 'from-emerald-400 to-teal-600',
       badgeColor: 'bg-emerald-400/20 text-emerald-400 border-emerald-400/40',
-      status: 'WEB & MOBILE',
-      version: 'v3.0.1 (Web Portal)',
-      fileSize: 'Cloud Portal',
-      downloadUrl: '/cartit-release.apk',
-      filename: 'cartit-merchant-hub.apk',
-      description: 'Comprehensive business portal for supermarket owners and FMCG brand suppliers. Monitor live sales, update product catalog prices, and track automated weekly settlements.',
+      status: 'ANDROID APK RELEASE',
+      version: 'v3.0.1 (Build 15)',
+      fileSize: '36.8 MB',
+      downloadUrl: 'https://github.com/dineshnaikg2003/cartit-website/releases/download/v1.0.0/cartit-merchant-release.apk',
+      filename: 'cartit-merchant-release.apk',
+      description: 'Comprehensive business mobile app for supermarket owners and FMCG brand suppliers. Monitor live sales, update product catalog prices, and track automated weekly settlements.',
       features: [
         'Live multi-store sales & revenue analytics',
         'Dynamic price override & inventory sync engine',
@@ -228,7 +228,7 @@ export const StaffPortalSection: React.FC<StaffPortalSectionProps> = ({ onOpenQR
                       className="w-full flex items-center justify-center gap-2 py-3 bg-[#00B259] hover:bg-[#008040] text-white font-bold rounded-xl text-xs transition-all shadow-md shadow-emerald-500/20 cursor-pointer"
                     >
                       <Download className="w-4 h-4" />
-                      <span>Download {app.title.split(' ')[1]} App (APK)</span>
+                      <span>Download Android APK ({app.fileSize})</span>
                     </a>
                   </div>
                 </div>
