@@ -49,7 +49,7 @@ export const DownloadSection: React.FC<DownloadSectionProps> = ({ onOpenQR }) =>
             // Trigger real APK download
             const a = document.createElement('a');
             a.href = '/cartit-release.apk';
-            a.download = 'cartit-release.apk';
+            a.download = 'CartIT-App.apk';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
@@ -107,7 +107,7 @@ export const DownloadSection: React.FC<DownloadSectionProps> = ({ onOpenQR }) =>
 
             <a
               href="/cartit-release.apk"
-              download="cartit-release.apk"
+              download="CartIT-App.apk"
               className="flex items-center gap-2 px-5 py-3 rounded-xl bg-[#00B259] hover:bg-[#008040] text-white text-xs font-black transition-all shadow-md shadow-emerald-500/20 cursor-pointer"
             >
               <Download className="w-4 h-4" />
@@ -143,7 +143,7 @@ export const DownloadSection: React.FC<DownloadSectionProps> = ({ onOpenQR }) =>
 
               <a
                 href="/cartit-release.apk"
-                download="cartit-release.apk"
+                download="CartIT-App.apk"
                 type="application/vnd.android.package-archive"
                 className="w-full flex items-center justify-center gap-2 py-3 bg-[#00B259] hover:bg-[#008040] text-white font-bold rounded-xl text-xs transition-all cursor-pointer shadow-md shadow-emerald-500/20"
               >
@@ -176,7 +176,7 @@ export const DownloadSection: React.FC<DownloadSectionProps> = ({ onOpenQR }) =>
 
               <a
                 href="/cartit-release.apk"
-                download="cartit-release.apk"
+                download="CartIT-App.apk"
                 className="w-full flex items-center justify-center gap-2 py-3 bg-[#0A0F0D] hover:bg-[#1F382B] text-white border border-[#1F382B] font-bold rounded-xl text-xs transition-all cursor-pointer"
               >
                 <Download className="w-4 h-4 text-[#00B259]" />
@@ -255,7 +255,7 @@ export const DownloadSection: React.FC<DownloadSectionProps> = ({ onOpenQR }) =>
               💡
             </div>
             <div>
-              <strong className="text-white">Android Browser Download Note:</strong> If your phone's browser (e.g. Chrome / Samsung Internet) downloads the file as <code className="text-[#FF9800] bg-black/40 px-1 py-0.5 rounded font-mono">cartit-release.apk.zip</code>, open your phone's <strong>Files / Downloads</strong> app, rename it to <code className="text-[#00B259] bg-black/40 px-1 py-0.5 rounded font-mono">cartit-release.apk</code> (remove <span className="underline">.zip</span>), and tap to install!
+              <strong className="text-white">Android Browser Download Note:</strong> If your phone's browser (e.g. Chrome / Samsung Internet) downloads the file as <code className="text-[#FF9800] bg-black/40 px-1 py-0.5 rounded font-mono">CartIT-App.apk.zip</code>, open your phone's <strong>Files / Downloads</strong> app, rename it to <code className="text-[#00B259] bg-black/40 px-1 py-0.5 rounded font-mono">CartIT-App.apk</code> (remove <span className="underline">.zip</span>), and tap to install!
             </div>
           </div>
         </div>
@@ -277,7 +277,7 @@ export const DownloadSection: React.FC<DownloadSectionProps> = ({ onOpenQR }) =>
 
               <div>
                 <h3 className="text-xl font-bold text-white">Downloading CartIT APK</h3>
-                <p className="text-xs text-[#9EBAAA] mt-1">Downloading official release build (cartit-release.apk)...</p>
+                <p className="text-xs text-[#9EBAAA] mt-1">Downloading official release build (CartIT-App.apk)...</p>
               </div>
 
               {/* Progress Bar */}

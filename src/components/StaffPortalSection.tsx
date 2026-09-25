@@ -40,7 +40,7 @@ export const StaffPortalSection: React.FC<StaffPortalSectionProps> = ({ onOpenQR
       version: 'v1.2.0 (Build 8)',
       fileSize: '52.4 MB',
       downloadUrl: '/cartit-delivery-release.apk',
-      filename: 'cartit-delivery-release.apk',
+      filename: 'CartIT-Delivery-App.apk',
       description: 'Official mobile application for CartIT delivery partners. Receive real-time order dispatch alerts, optimized turn-by-turn route navigation, and instant payout tracking.',
       features: [
         'Real-time GPS order dispatch & route optimization',
