@@ -35,7 +35,8 @@ export const StaffPortalSection: React.FC<StaffPortalSectionProps> = ({ onOpenQR
       appIconUrl: '/delivery_app_icon.png',
       accentColor: 'from-[#00B259] to-[#008040]',
       badgeColor: 'bg-[#00B259]/20 text-[#00B259] border-[#00B259]/40',
-      status: 'ANDROID APK RELEASE',
+      status: 'AVAILABLE APK',
+      isAvailable: true,
       version: 'v1.2.0 (Build 8)',
       fileSize: '52.4 MB',
       downloadUrl: 'https://github.com/dineshnaikg2003/cartit-website/releases/download/v1.0.0/cartit-delivery-release.apk',
@@ -57,11 +58,12 @@ export const StaffPortalSection: React.FC<StaffPortalSectionProps> = ({ onOpenQR
       appIconUrl: '/app_logo.png',
       accentColor: 'from-[#FF9800] to-[#E65100]',
       badgeColor: 'bg-[#FF9800]/20 text-[#FF9800] border-[#FF9800]/40',
-      status: 'ANDROID APK RELEASE',
-      version: 'v2.1.4 (Build 12)',
-      fileSize: '38.2 MB',
-      downloadUrl: 'https://github.com/dineshnaikg2003/cartit-website/releases/download/v1.0.0/cartit-store-manager-release.apk',
-      filename: 'cartit-store-manager-release.apk',
+      status: 'COMING SOON 🚀',
+      isAvailable: false,
+      version: 'v2.1 (In Development)',
+      fileSize: 'Coming Soon',
+      downloadUrl: '#',
+      filename: '',
       description: 'Streamlined warehouse and dark store operating system. Scan incoming inventory, manage order picking queues with digital checklists, and hand off packed orders to riders.',
       features: [
         'Barcode scanner for fast picking & inventory audit',
@@ -77,13 +79,14 @@ export const StaffPortalSection: React.FC<StaffPortalSectionProps> = ({ onOpenQR
       subtitle: 'For Supermarket Owners & FMCG Brands',
       icon: BarChart3,
       appIconUrl: '/app_logo.png',
-      accentColor: 'from-emerald-400 to-teal-600',
-      badgeColor: 'bg-emerald-400/20 text-emerald-400 border-emerald-400/40',
-      status: 'ANDROID APK RELEASE',
-      version: 'v3.0.1 (Build 15)',
-      fileSize: '36.8 MB',
-      downloadUrl: 'https://github.com/dineshnaikg2003/cartit-website/releases/download/v1.0.0/cartit-merchant-release.apk',
-      filename: 'cartit-merchant-release.apk',
+      accentColor: 'from-amber-400 to-orange-600',
+      badgeColor: 'bg-amber-400/20 text-amber-400 border-amber-400/40',
+      status: 'COMING SOON 🚀',
+      isAvailable: false,
+      version: 'v3.0 (In Development)',
+      fileSize: 'Coming Soon',
+      downloadUrl: '#',
+      filename: '',
       description: 'Comprehensive business mobile app for supermarket owners and FMCG brand suppliers. Monitor live sales, update product catalog prices, and track automated weekly settlements.',
       features: [
         'Live multi-store sales & revenue analytics',
@@ -224,15 +227,25 @@ export const StaffPortalSection: React.FC<StaffPortalSectionProps> = ({ onOpenQR
                   </div>
 
                   <div className="grid grid-cols-1 gap-2">
-                    <a
-                      href={app.downloadUrl}
-                      download={app.filename}
-                      type="application/vnd.android.package-archive"
-                      className="w-full flex items-center justify-center gap-2 py-3 bg-[#00B259] hover:bg-[#008040] text-white font-bold rounded-xl text-xs transition-all shadow-md shadow-emerald-500/20 cursor-pointer"
-                    >
-                      <Download className="w-4 h-4" />
-                      <span>Download Android APK ({app.fileSize})</span>
-                    </a>
+                    {app.isAvailable ? (
+                      <a
+                        href={app.downloadUrl}
+                        download={app.filename}
+                        type="application/vnd.android.package-archive"
+                        className="w-full flex items-center justify-center gap-2 py-3 bg-[#00B259] hover:bg-[#008040] text-white font-bold rounded-xl text-xs transition-all shadow-md shadow-emerald-500/20 cursor-pointer"
+                      >
+                        <Download className="w-4 h-4" />
+                        <span>Download Android APK ({app.fileSize})</span>
+                      </a>
+                    ) : (
+                      <button
+                        onClick={() => alert(`${app.title} is currently under active development and coming soon! 🚀 Please download the CartIT Delivery Rider App (APK) available now.`)}
+                        className="w-full flex items-center justify-center gap-2 py-3 bg-[#0A0F0D] hover:bg-[#1F382B] text-[#9EBAAA] hover:text-white border border-[#1F382B] font-bold rounded-xl text-xs transition-all cursor-pointer opacity-90"
+                      >
+                        <Clock className="w-4 h-4 text-[#FF9800]" />
+                        <span>{app.title.split(' ')[1]} App - Coming Soon 🚀</span>
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>
